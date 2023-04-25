@@ -16,7 +16,7 @@ const dadJoke = async(req, res) => {
         const response = await axios.request(options);
         res.json(response.data);
     } catch (error) {
-        console.error(error);
+      res.json({ error: error.data.message});
     }
 }
 module.exports = {
